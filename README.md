@@ -15,4 +15,4 @@ Main Features to add in the Chat App
 11) Group members can leave the group
 12) If the Group admin leaves the group then a new Admin will be assigned
 13) Users can delete a chat / unfriend a user
-14) Admin Dashboard to see users, messages, and chats ( Only Accessible with a Secret key)
+14) Admin Dashboard to see users, messages, and chats (Only Accessible with a Secret key)
