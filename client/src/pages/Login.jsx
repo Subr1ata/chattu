@@ -128,8 +128,6 @@ const Login = () => {
                     src={avatar.preview}
                   />
 
-                  {/* {avatar.error && <Typography color="error" variant="caption">{avatar.error}</Typography>} */}
-
                   <IconButton
                     sx={{
                       position: "absolute",
