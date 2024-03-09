@@ -2,7 +2,9 @@
 /* eslint-disable react/prop-types */
 
 import { Stack, Typography } from "@mui/material";
+import { memo } from "react";
 import { Link } from "react-router-dom";
+import AvatarCard from "./AvatarCard";
 
 const ChatItem = ({
   avatar = [],
@@ -16,7 +18,11 @@ const ChatItem = ({
   handleDeleteChatOpen,
 }) => {
   return (
-    <Link to={`/chat/${_id}`}>
+    <Link
+      sx={{ padding: "0" }}
+      to={`/chat/${_id}`}
+      onContextMenu={(e) => handleDeleteChatOpen(e, _id, groupChat)}
+    >
       <div
         style={{
           display: "flex",
@@ -28,18 +34,19 @@ const ChatItem = ({
           position: "relative",
         }}
       >
-        {/* Avatar Card */}
+        <AvatarCard avatar={avatar} />
+
         <Stack>
-            <Typography>{name}</Typography>
-            {
-                newMessageAlert && (
-                    <Typography>{newMessageAlert.count}</Typography>
-                )
-            }
+          <Typography>{name}</Typography>
+          {newMessageAlert && (
+            <Typography>{newMessageAlert.count} New Message</Typography>
+          )}
         </Stack>
+
+        
       </div>
     </Link>
   );
 };
 
-export default ChatItem;
+export default memo(ChatItem);

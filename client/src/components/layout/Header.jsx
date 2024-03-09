@@ -14,13 +14,14 @@ import {
   Add as AddIcon,
   Group as GroupIcon,
   Logout as LogoutIcon,
+  NotificationAdd as NotificationIcon
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
 
-const SearchDialog = lazy(() => import("../specific/SearchDialog"));
+const SearchDialog = lazy(() => import("../specific/Search"));
 const NotificationDialog = lazy(() => import("../specific/Notifications"));
-const NewGroupDialog = lazy(() => import("../specific/NewGroup"));
+const NewGroupDialog = lazy(() => import("../dialogs/NewGroup"));
 
 const Header = () => {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ const Header = () => {
         <AppBar
           position="static"
           sx={{
-            bgcolor: orange,
+            bgcolor: orange[800],
           }}
         >
           <Toolbar>
@@ -99,7 +100,7 @@ const Header = () => {
 
               <IconBtn
                 title={"Notifications"}
-                icon={<GroupIcon />}
+                icon={<NotificationIcon />}
                 onClick={openNotifications}
               />
 
