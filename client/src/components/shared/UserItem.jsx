@@ -3,8 +3,8 @@ import { Avatar, IconButton, ListItem, Stack, Typography } from "@mui/material";
 import { memo } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 
-const UserItem = ({ user, handler, handlerIsLoading, isAdded = false }) => {
-  const { name, _id, avatar } = user;
+const UserItem = ({ user, handler, handlerIsLoading }) => {
+  const { name, _id, avatar, isAdded } = user;
 
   return (
     <ListItem>
