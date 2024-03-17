@@ -25,7 +25,7 @@ const App = () => {
           <Route
             path="/login"
             element={
-              <ProtectRoute user={!user} redirect="/">
+              <ProtectRoute user={user} redirect="/">
                 <Login />
               </ProtectRoute>
             }
