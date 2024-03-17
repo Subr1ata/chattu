@@ -48,6 +48,7 @@ const NewGroup = () => {
               user={user}
               key={user._id}
               handler={selectMemberHandler}
+              isAdded={selectedMembers.includes(user._id)}
             />
           ))}
         </Stack>
