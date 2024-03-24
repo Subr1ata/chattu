@@ -7,7 +7,7 @@ const Login = lazy(() => import("./pages/Login"));
 const Chat = lazy(() => import("./pages/Chat"));
 const Groups = lazy(() => import("./pages/Groups"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const LayoutLoader = lazy(() => import("../src/components/layout/Loaders"))
+const LayoutLoader = lazy(() => import("../src/components/layout/Loaders"));
 
 const user = true;
 
@@ -21,7 +21,7 @@ const App = () => {
             <Route path="/chat/:chatId" element={<Chat />} />
             <Route path="/groups" element={<Groups />} />
           </Route>
-          
+
           <Route
             path="/login"
             element={

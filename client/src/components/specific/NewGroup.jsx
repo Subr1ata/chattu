@@ -18,12 +18,6 @@ const NewGroup = () => {
   const [selectedMembers, setSelectedMembers] = useState([]);
 
   const selectMemberHandler = (id) => {
-    setMembers((prev) =>
-      prev.map((user) =>
-        user._id === id ? { ...user, isAdded: !user.isAdded } : user
-      )
-    );
-
     setSelectedMembers((prev) =>
       prev.includes(id)
         ? prev.filter((currElement) => currElement !== id)
@@ -32,6 +26,8 @@ const NewGroup = () => {
   };
 
   const submitHandler = () => {};
+
+  const closeHandler = () => {};
 
   return (
     <Dialog open>
@@ -60,7 +56,12 @@ const NewGroup = () => {
         </Stack>
 
         <Stack direction={"row"} justifyContent={"space-evenly"}>
-          <Button variant="text" color="error" size="large">
+          <Button
+            variant="text"
+            color="error"
+            size="large"
+            onClick={closeHandler}
+          >
             Cancel
           </Button>
           <Button variant="contained" size="large" onClick={submitHandler}>
